@@ -35,6 +35,5 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Make
         run: |
-           make check
-           cat tests/sbcl.log
+           make check; cat tests/sbcl.log
         
