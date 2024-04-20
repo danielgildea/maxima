@@ -35,5 +35,12 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Make
         run: |
-           make check; cat tests/sbcl.log
+           make check
         
+      - name: Archive Test Results
+        if: success() || failure()
+        uses: actions/upload-artifact@v1
+        with:
+          name: test-results
+          path: tests/sbcl-test.sh.log
+          
